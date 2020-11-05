@@ -1,0 +1,15 @@
+img {
+    height: 20vh;
+    flex-grow: 1;
+    margin: 0 5px 10px 5px;
+    max-height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+    border-radius: 4px;
+    transition: transform 300ms;
+
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
 import Form from './components/Form';
+import PhotoGallery from './components/PhotoGallery';
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
@@ -21,13 +22,11 @@ function App() {
     fetch(`https://api.unsplash.com/photos/random/?client_id=${key}`)
     .then(resp => resp.json()
     .then(data => setBackgroundImg(data.urls.regular)))
-  }, [])
 
-  // useEffect(() => {
-    // fetch(`https://api.unsplash.com/topics/?client_id=${key}`)
-    // .then(resp => resp.json()
-    // .then(data => setTrendingTopics(...data)))
-  // }, [])
+    fetch(`https://api.unsplash.com/topics/?client_id=${key}&per_page=5`)
+    .then(resp => resp.json()
+    .then(data => setTrendingTopics(data)))
+  }, [])
 
   return (
     <>
@@ -39,14 +38,7 @@ function App() {
         handleSubmit={handleSubmit}
       />
       {photos.length !==0 && 
-        <section className='container'>
-          <div className='row' style={{"flexWrap": "wrap"}}>
-            {photos &&
-              photos.map(photo =>
-                <img key={photo.id} src={`${photo.urls.regular}&auto=format&w=300`} alt='' />
-            )}
-          </div>
-        </section>
+        <PhotoGallery photos={photos}/>
       }
     </>
   );
