@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <section className="hero" style={{"backgroundImage": `url(${backgroundImg})`}} />
+      <section className="hero" style={backgroundImg ? {"backgroundImage": `url(${backgroundImg})`} : null} />
       <Form 
         searchValue={searchValue} 
         handleSearchValueChange={setSearchValue}
