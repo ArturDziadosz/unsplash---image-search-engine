@@ -49,6 +49,59 @@
         width: 100%;
         padding: 10px 10px 10px 40px;
       }
+
+      .header__form__label {
+        position: absolute;
+        font-weight: 700;
+        color: #ab0000;
+        top: -65px;
+        left: calc(50% - 120px);
+        font-size: 2em;
+        line-height: 2em;
+      }
+
+      .header__form__input--error {
+        border-color: #ab0000;
+        color: #ab0000;
+        outline: #ab0000;
+      }
+    }
+
+    .header__form--error {
+      margin-top: 65px;
+    }
+  }
+}
+
+.smallForm {
+
+  .header {
+
+    .header__form {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin: 10px 0;
+      width: 75%;
+
+      .fas {
+        background-color: #fff;
+        color: grey;
+        position: absolute;
+      }
+
+      .fa-search {
+        left: 15px;
+      }
+
+      .fa-times {
+        right: 15px;
+      }
+      
+      .header__form__input {
+        width: 100%;
+        padding: 10px 10px 10px 40px;
+      }
     }
   }
 }
