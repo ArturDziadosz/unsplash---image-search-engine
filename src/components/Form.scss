@@ -1,0 +1,35 @@
+.fullForm {
+  height: 100vh;
+
+  .header {
+    flex-direction: column;
+    color: #fff;
+
+    .header__title {
+      font-size: 2em;
+      line-height: 2em;
+    }
+
+    .header__text {
+      line-height: 1.5em;
+
+      &:last-of-type {
+        font-size: 0.9em;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+        background-image: url();
+      }
+    }
+
+    .header__form {
+        .header__form__input {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+        }
+    }
+  }
+}
