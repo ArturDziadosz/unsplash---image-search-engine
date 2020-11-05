@@ -1,0 +1,10 @@
+.hero {
+  background-color: grey;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  filter: brightness(60%);
+  z-index: -1;
+}

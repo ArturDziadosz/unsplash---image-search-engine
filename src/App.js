@@ -1,11 +1,12 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import Form from './components/Form';
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
   const [photos, setPhotos] = useState([]);
+  const [backgroundImg, setBackgroundImg] = useState('');
   const key = "q8pGKlT0Khz6viOf9A5MXa-3XvXETz3f8xNcchKr9MY";
 
   const handleSubmit = e => {
@@ -15,22 +16,31 @@ function App() {
     .then(data => setPhotos(data.results)))
   }
 
+  useEffect(() => {
+    fetch(`https://api.unsplash.com/photos/random/?client_id=${key}`)
+    .then(resp => resp.json()
+    .then(data => setBackgroundImg(data.urls.full)))
+  }, [])
+
   return (
-    <div>
+    <>
+      <section className="hero" style={{"backgroundImage": `url(${backgroundImg})`}} />
       <Form 
         searchValue={searchValue} 
         handleSearchValueChange={setSearchValue}
         handleSubmit={handleSubmit}
       />
-      <section className='container'>
-        <div className='row' style={{"flexWrap": "wrap"}}>
-          {photos &&
-            photos.map(photo =>
-              <img style={{"width": "300px", "height": "250px"}} key={photo.id} src={photo.urls.full} alt='' />
-          )}
-        </div>
-      </section>
-    </div>
+      {photos.length !==0 && 
+        <section className='container'>
+          <div className='row' style={{"flexWrap": "wrap"}}>
+            {photos &&
+              photos.map(photo =>
+                <img style={{"width": "300px", "height": "250px"}} key={photo.id} src={photo.urls.full} alt='' />
+            )}
+          </div>
+        </section>
+      }
+    </>
   );
 }
 
