@@ -8,10 +8,11 @@
     .header__title {
       font-size: 2em;
       line-height: 2em;
+      font-weight: 900;
     }
 
     .header__text {
-      line-height: 1.5em;
+      margin: 5px 0;
 
       &:last-of-type {
         font-size: 0.9em;
@@ -28,6 +29,7 @@
       display: flex;
       align-items: center;
       position: relative;
+      margin: 20px 0;
 
       .fas {
         background-color: #fff;
@@ -46,7 +48,6 @@
       .header__form__input {
         width: 100%;
         padding: 10px 10px 10px 40px;
-        margin: 20px 0;
       }
     }
   }
