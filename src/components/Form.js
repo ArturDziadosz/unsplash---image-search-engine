@@ -24,10 +24,10 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
         {photos.length === 0 &&
           <>
             <h1 className='header__title'>Unsplash</h1>
-            <p className='header__text'>The internet's source of 
+            <p className='header__text'>The internet's source of {' '}
               <a  href="https://unsplash.com/" 
                   target='_blank' 
-                  rel='noreferrer'>freely-usable images</a>.
+                  rel='noreferrer'> freely-usable images</a>.
             </p>
             <p className='header__text'>Powered by creators everywhere.</p>
           </> 
