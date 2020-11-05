@@ -1,7 +1,22 @@
-
+import { useEffect, useRef } from 'react';
 import './Form.scss';
 
 function Form( {searchValue, handleSearchValueChange, handleSubmit} ) {
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  })
+
+  const handleFocus = () => {
+    inputRef.current.focus();
+  }
+
+  const handleClear = () => {
+    handleSearchValueChange('');
+    inputRef.current.focus();
+  }
 
   return (
     <section className='container fullForm'>
@@ -14,6 +29,7 @@ function Form( {searchValue, handleSearchValueChange, handleSubmit} ) {
           Powered by creators everywhere.
         </p>
         <form className='header__form' onSubmit={handleSubmit}>
+          <i className="fas fa-search" onClick={handleFocus} />
           <input 
             type='text'
             name='content'
@@ -21,7 +37,9 @@ function Form( {searchValue, handleSearchValueChange, handleSubmit} ) {
             placeholder='Search free high-resolution photos'
             value={searchValue}
             onChange={e => handleSearchValueChange(e.target.value)}
+            ref={inputRef}
             />
+          {searchValue ? <i className="fas fa-times" onClick={handleClear}/> : null}
         </form>
         <p className='header__text'>Trending: ..., ..., ..., ...</p>
       </header>
