@@ -44,8 +44,8 @@ function Form( {searchValue, trendingTopics, handleSearchValueChange, handleSubm
         {trendingTopics.length !== 0 &&
           <p className='header__text'>Trending: 
             {trendingTopics.map((topic, i) => {
-              if (trendingTopics.length === i +1) return <span key={topic.id}> {topic}</span>;
-              return <span key={topic.id}> {topic},</span>
+              if (trendingTopics.length === i +1) return <span key={topic.id}> {topic.title}</span>;
+              return <span key={topic.id}> {topic.title},</span>
               }
             )}
           </p>
