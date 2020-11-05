@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './Form.scss';
 
-function Form( {searchValue, handleSearchValueChange, handleSubmit} ) {
+function Form( {searchValue, trendingTopics, handleSearchValueChange, handleSubmit} ) {
 
   const inputRef = useRef(null);
 
@@ -41,7 +41,15 @@ function Form( {searchValue, handleSearchValueChange, handleSubmit} ) {
             />
           {searchValue ? <i className="fas fa-times" onClick={handleClear}/> : null}
         </form>
-        <p className='header__text'>Trending: ..., ..., ..., ...</p>
+        {trendingTopics.length !== 0 &&
+          <p className='header__text'>Trending: 
+            {trendingTopics.map((topic, i) => {
+              if (trendingTopics.length === i +1) return <span key={topic.id}> {topic}</span>;
+              return <span key={topic.id}> {topic},</span>
+              }
+            )}
+          </p>
+        }
       </header>
     </section>
   );
