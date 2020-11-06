@@ -6,7 +6,7 @@ import PhotoGallery from './components/PhotoGallery';
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
-  const [searchValueA, setSearchValueA] = useState('');
+  const [savedValue, setSavedValue] = useState('');
   const [photos, setPhotos] = useState([]);
   const [backgroundImg, setBackgroundImg] = useState('');
   const [trendingTopics, setTrendingTopics] = useState([]);
@@ -23,7 +23,21 @@ function App() {
       } else {
         setNoMatch(false);
       }
-      setSearchValueA(searchValue);
+      setSavedValue(searchValue);
+      setPhotos(data.results);
+    }))
+  }
+
+  const handleClickTag = (e ,value) => {
+    fetch(`https://api.unsplash.com/search/photos/?client_id=${key}&query=${value}&per_page=30`)
+    .then(resp => resp.json()
+    .then(data => {
+      if (data.total === 0) {
+        setNoMatch(true);
+      } else {
+        setNoMatch(false);
+      }
+      setSavedValue(value.charAt(0).toUpperCase() + value.slice(1));
       setPhotos(data.results);
     }))
   }
@@ -52,7 +66,8 @@ function App() {
       {photos.length !==0 && 
         <PhotoGallery 
           photos={photos}
-          searchValueA={searchValueA}
+          savedValue={savedValue}
+          handleClickTag={handleClickTag}
         />
       }
     </>
