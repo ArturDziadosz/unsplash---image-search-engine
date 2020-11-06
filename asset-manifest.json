@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/unsplash---image-search-engine/static/css/main.bf10e2d4.chunk.css",
-    "main.js": "/unsplash---image-search-engine/static/js/main.78a872d2.chunk.js",
-    "main.js.map": "/unsplash---image-search-engine/static/js/main.78a872d2.chunk.js.map",
+    "main.css": "/unsplash---image-search-engine/static/css/main.744488e2.chunk.css",
+    "main.js": "/unsplash---image-search-engine/static/js/main.772e505c.chunk.js",
+    "main.js.map": "/unsplash---image-search-engine/static/js/main.772e505c.chunk.js.map",
     "runtime-main.js": "/unsplash---image-search-engine/static/js/runtime-main.9e9fdc55.js",
     "runtime-main.js.map": "/unsplash---image-search-engine/static/js/runtime-main.9e9fdc55.js.map",
     "static/js/2.79f65c45.chunk.js": "/unsplash---image-search-engine/static/js/2.79f65c45.chunk.js",
     "static/js/2.79f65c45.chunk.js.map": "/unsplash---image-search-engine/static/js/2.79f65c45.chunk.js.map",
     "index.html": "/unsplash---image-search-engine/index.html",
-    "static/css/main.bf10e2d4.chunk.css.map": "/unsplash---image-search-engine/static/css/main.bf10e2d4.chunk.css.map",
+    "static/css/main.744488e2.chunk.css.map": "/unsplash---image-search-engine/static/css/main.744488e2.chunk.css.map",
     "static/js/2.79f65c45.chunk.js.LICENSE.txt": "/unsplash---image-search-engine/static/js/2.79f65c45.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9e9fdc55.js",
     "static/js/2.79f65c45.chunk.js",
-    "static/css/main.bf10e2d4.chunk.css",
-    "static/js/main.78a872d2.chunk.js"
+    "static/css/main.744488e2.chunk.css",
+    "static/js/main.772e505c.chunk.js"
   ]
 }
