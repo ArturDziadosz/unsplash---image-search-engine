@@ -51,7 +51,7 @@
       .header__form__input {
         width: 100%;
         height: 40px;
-        padding: 10px 10px 10px 40px;
+        padding: 10px 10px 10px 50px;
       }
 
       .header__form__label {
@@ -84,6 +84,7 @@
     width: 75%;
 
     .header__form {
+      margin-bottom: 0;
 
       .fas {
         background-color: lighten(grey, 40%);
