@@ -6,6 +6,7 @@ import PhotoGallery from './components/PhotoGallery';
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
+  const [searchValueA, setSearchValueA] = useState('');
   const [photos, setPhotos] = useState([]);
   const [backgroundImg, setBackgroundImg] = useState('');
   const [trendingTopics, setTrendingTopics] = useState([]);
@@ -22,6 +23,7 @@ function App() {
       } else {
         setNoMatch(false);
       }
+      setSearchValueA(searchValue);
       setPhotos(data.results);
     }))
   }
@@ -48,7 +50,10 @@ function App() {
         handleSubmit={handleSubmit}
       />
       {photos.length !==0 && 
-        <PhotoGallery photos={photos}/>
+        <PhotoGallery 
+          photos={photos}
+          searchValueA={searchValueA}
+        />
       }
     </>
   );
