@@ -34,7 +34,7 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
         }
         <form className={noMatch ? 'header__form header__form--error' : 'header__form'} onSubmit={handleSubmit}>
           <i className="fas fa-search" onClick={handleFocus} />
-          {noMatch && <label for='content' className='header__form__label'>No match found!</label>}
+          {noMatch && <label htmlFor='content' className='header__form__label'>No match found!</label>}
           <input 
             type='text'
             name='content'
