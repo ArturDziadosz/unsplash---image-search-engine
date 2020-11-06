@@ -2,7 +2,7 @@ import './PhotoGallery.scss';
 import Photo from './Photo';
 import { useEffect, useState } from 'react';
 
-const PhotoGallery = ( {photos, searchValueA} ) => {
+const PhotoGallery = ( {photos, savedValue, handleClickTag} ) => {
 
   const [sortedTags, setSortedTags] = useState([]);
 
@@ -16,7 +16,7 @@ const PhotoGallery = ( {photos, searchValueA} ) => {
     })
 
     const tagsCount = arrayTags.reduce((obj, item) => {
-      const searched = searchValueA.toLowerCase();
+      const searched = savedValue.toLowerCase();
       if (item === searched) return obj;
       if (!obj[item]) obj[item] = 0;
       obj[item]++;
@@ -32,10 +32,12 @@ const PhotoGallery = ( {photos, searchValueA} ) => {
   return (
     <section className='container photoGallery'>
       <div className='row photoGallery__description'>
-        <h2 className='photoGallery__description__title'>{searchValueA}</h2>
+        <h2 className='photoGallery__description__title'>{savedValue}</h2>
+      </div>
+      <div className='row photoGallery__description'>
         {sortedTags && 
           sortedTags.map((sortedTag, idx) => {
-            return <div key={idx} style={{'margin': '5px', 'overflowX': 'hidden'}}>{sortedTag}</div>
+            return <div key={idx} className='photoGallery__description__tag' onClick={e => handleClickTag(e, sortedTag)}>{sortedTag}</div>
           })
         }
       </div>
