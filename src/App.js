@@ -58,15 +58,15 @@ function App() {
     }))
   }
 
-  // useEffect(() => {
-    // fetch(`https://api.unsplash.com/photos/random/?client_id=${key}`)
-    // .then(resp => resp.json()
-    // .then(data => setBackgroundImg(data.urls.regular)))
+  useEffect(() => {
+    fetch(`https://api.unsplash.com/photos/random/?client_id=${key}`)
+    .then(resp => resp.json()
+    .then(data => setBackgroundImg(data.urls.regular)))
 
-    // fetch(`https://api.unsplash.com/topics/?client_id=${key}&per_page=5`)
-    // .then(resp => resp.json()
-    // .then(data => setTrendingTopics(data)))
-  // }, [])
+    fetch(`https://api.unsplash.com/topics/?client_id=${key}&per_page=5`)
+    .then(resp => resp.json()
+    .then(data => setTrendingTopics(data)))
+  }, [])
 
   return (
     <>
