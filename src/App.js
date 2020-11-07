@@ -13,19 +13,29 @@ function App() {
   const [noMatch, setNoMatch] = useState(false);
   const key = "q8pGKlT0Khz6viOf9A5MXa-3XvXETz3f8xNcchKr9MY";
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    fetch(`https://api.unsplash.com/search/photos/?client_id=${key}&query=${searchValue}&per_page=30`)
-    .then(resp => resp.json()
-    .then(data => {
-      if (data.total === 0) {
-        setNoMatch(true);
-      } else {
-        setNoMatch(false);
-      }
-      setSavedValue(searchValue);
-      setPhotos(data.results);
-    }))
+  const handleSubmit = (e, value) => {
+    if (value) {
+      fetch(`https://api.unsplash.com/search/photos/?client_id=${key}&query=${value}&per_page=30`)
+      .then(resp => resp.json()
+      .then(data => {
+        setSearchValue(value)
+        setSavedValue(value);
+        setPhotos(data.results);
+      }))
+    } else {
+      e.preventDefault();
+      fetch(`https://api.unsplash.com/search/photos/?client_id=${key}&query=${searchValue}&per_page=30`)
+      .then(resp => resp.json()
+      .then(data => {
+        if (data.total === 0) {
+          setNoMatch(true);
+        } else {
+          setNoMatch(false);
+        }
+        setSavedValue(searchValue);
+        setPhotos(data.results);
+      }))
+    }
   }
 
   const handleClickTag = (e ,value) => {
@@ -42,15 +52,15 @@ function App() {
     }))
   }
 
-  useEffect(() => {
-    fetch(`https://api.unsplash.com/photos/random/?client_id=${key}`)
-    .then(resp => resp.json()
-    .then(data => setBackgroundImg(data.urls.regular)))
+  // useEffect(() => {
+    // fetch(`https://api.unsplash.com/photos/random/?client_id=${key}`)
+    // .then(resp => resp.json()
+    // .then(data => setBackgroundImg(data.urls.regular)))
 
-    fetch(`https://api.unsplash.com/topics/?client_id=${key}&per_page=5`)
-    .then(resp => resp.json()
-    .then(data => setTrendingTopics(data)))
-  }, [])
+    // fetch(`https://api.unsplash.com/topics/?client_id=${key}&per_page=5`)
+    // .then(resp => resp.json()
+    // .then(data => setTrendingTopics(data)))
+  // }, [])
 
   return (
     <>
