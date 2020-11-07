@@ -4,6 +4,7 @@
   height: 100vh;
 
   .header {
+    max-width: 1000px;
     flex-direction: column;
     color: $altColorFont;
     overflow-y: hidden;
@@ -111,6 +112,7 @@
 
   .header {
     width: 75%;
+    max-width: 750px;
 
     .header__form {
       margin-bottom: 0;
