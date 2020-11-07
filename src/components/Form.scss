@@ -77,7 +77,7 @@
       .header__form__list {
         position: absolute;
         list-style: none;
-        top: 45px;
+        top: 50px;
         width: 100%;
         border: 1px solid $basicColorFont;
         background-color: $altColorFont;
@@ -89,7 +89,7 @@
           font-size: 0.8em;
 
           &:hover {
-            background-color: altMainColor;
+            background-color: $altMainColor;
             cursor: pointer;
           }
         }
@@ -105,6 +105,9 @@
 
 .smallForm {
   height: auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   .header {
     width: 75%;
@@ -121,6 +124,10 @@
         border: none;
         outline: none;
         background-color: $altMainColor;
+        box-shadow: 1px 1px 0 $darkerAltMainColor,
+                    2px 2px 0 $darkerAltMainColor,
+                    3px 3px 0 $darkerAltMainColor;
+        margin: 5px;
 
         &:focus {
           border: 2px solid $basicColorFont;
