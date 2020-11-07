@@ -15,9 +15,9 @@ const PhotoGallery = ( {photos, savedValue, handleClickTag} ) => {
       }));
     })
 
-    const tagsCount = arrayTags.reduce((obj, item) => {
-      const searched = savedValue.toLowerCase();
-      if (item === searched) return obj;
+  const tagsCount = arrayTags.reduce((obj, item) => {
+    const searched = savedValue.toLowerCase();
+    if (item === searched) return obj;
       if (!obj[item]) obj[item] = 0;
       obj[item]++;
       return obj;
