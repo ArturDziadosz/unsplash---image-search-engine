@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import './Photo.scss';
 
 const Photo = ( {user, src, srcBigger} ) => {
 
   const [isBig, setIsBig] = useState(false);
 
-  const handleBigger = () => {
+  const handleToggleBigger = () => {
     setIsBig(!isBig);
     window.scrollTo(0,0);
   }
@@ -16,7 +16,7 @@ const Photo = ( {user, src, srcBigger} ) => {
         className='list__elem__img'
         src={src} 
         alt='' 
-        onClick={handleBigger} 
+        onClick={handleToggleBigger} 
       />
       {isBig && 
         <div className='list__elem__container'>
@@ -29,7 +29,7 @@ const Photo = ( {user, src, srcBigger} ) => {
             className='elem__container__img'
             src={srcBigger} 
             alt='' 
-            onClick={handleBigger} 
+            onClick={handleToggleBigger} 
           />
         </div>
       }
