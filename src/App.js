@@ -18,8 +18,13 @@ function App() {
       fetch(`https://api.unsplash.com/search/photos/?client_id=${key}&query=${value}&per_page=30`)
       .then(resp => resp.json()
       .then(data => {
+        if (data.total === 0) {
+          setNoMatch(true);
+        } else {
+          setNoMatch(false);
+        }
         setSearchValue(value)
-        setSavedValue(value);
+        setSavedValue(value.charAt(0).toUpperCase() + value.slice(1));
         setPhotos(data.results);
       }))
     } else {
@@ -47,6 +52,7 @@ function App() {
       } else {
         setNoMatch(false);
       }
+      setSearchValue(value)
       setSavedValue(value.charAt(0).toUpperCase() + value.slice(1));
       setPhotos(data.results);
     }))
