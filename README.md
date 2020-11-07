@@ -3,7 +3,7 @@
 
 <br/>
 
-<!-- ### <><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Simple ul list that shows TODO list'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Task contains name, priority and checkbox input'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Header row allow user to sort the list ascending and descending'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Priority and Done column are editable'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<User may delete task, but only that one that is finished :smile: <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; just hover that task and you will see bin icon'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<List is pageable (5, 10, 15 tasks per page)'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Simple form for adding new rows with validation'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<TODO list is stored in local storage, is updated after adding, editing and deleting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tasks`><br/></> -->
+### <><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Simple web application for searching images'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Input with typing ahead after more than 2 chars'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<After submiting application will show user similar topics'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<User can type phrase, click on type ahead suggestion or similar topic suggestion'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<User can examine image for more details, e.g user data or location'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Application starts with random background-image and most trending topics'><br/></>
     
 <br/>
 
