@@ -1,3 +1,5 @@
+@import '../styles/config/variables';
+
 .photoGallery {
   margin: 0 auto 20px;
 
@@ -15,8 +17,8 @@
     .photoGallery__description__tag {
       margin: 5px 5px 30px 5px;
       padding: 5px 30px;
-      border: 1px solid lighten(grey, 40%);
-      color: grey;
+      border: 1px solid $altMainColor;
+      color: $mainColor;
       display: flex;
       align-items: center;
       flex: 1 0 auto;
@@ -24,7 +26,8 @@
       border-radius: 4px;
 
       &:hover {
-        background-color: lighten(grey, 40%);
+        background-color: $altMainColor;
+        border: 1px solid $darkerAltMainColor;
       }
     }
   }

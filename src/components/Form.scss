@@ -1,9 +1,11 @@
+@import '../styles/config/variables';
+
 .fullForm, .smallForm {
   height: 100vh;
 
   .header {
     flex-direction: column;
-    color: #fff;
+    color: $altColorFont;
     overflow-y: hidden;
 
     .header__title {
@@ -23,7 +25,7 @@
       }
 
       a {
-        color: #fff;
+        color: $altColorFont;
         text-decoration: underline;
         background-image: url();
       }
@@ -37,8 +39,8 @@
       position: relative;
 
       .fas {
-        background-color: #fff;
-        color: grey;
+        background-color: $altColorFont;
+        color: $mainColor;
         position: absolute;
       }
 
@@ -59,7 +61,7 @@
       .header__form__label {
         position: absolute;
         font-weight: 700;
-        color: #ab0000;
+        color: $error;
         top: -65px;
         left: calc(50% - 120px);
         font-size: 2em;
@@ -67,9 +69,9 @@
       }
 
       .header__form__input--error {
-        border-color: #ab0000;
-        color: #ab0000;
-        outline: #ab0000;
+        border-color: $error;
+        color: $error;
+        outline: $error;
       }
 
       .header__form__list {
@@ -77,9 +79,9 @@
         list-style: none;
         top: 45px;
         width: 100%;
-        border: 1px solid black;
-        background-color: #fff;
-        color: #000;
+        border: 1px solid $basicColorFont;
+        background-color: $altColorFont;
+        color: $basicColorFont;
 
         .form__list__elem {
           line-height: 30px;
@@ -87,7 +89,7 @@
           font-size: 0.8em;
 
           &:hover {
-            background-color: lighten(grey, 40%);
+            background-color: altMainColor;
             cursor: pointer;
           }
         }
@@ -111,17 +113,17 @@
       margin-bottom: 0;
 
       .fas {
-        background-color: lighten(grey, 40%);
+        background-color: $altMainColor;
       }
       
       .header__form__input {
         border-radius: 20px;
         border: none;
         outline: none;
-        background-color: lighten(grey, 40%);
+        background-color: $altMainColor;
 
         &:focus {
-          border: 2px solid black;
+          border: 2px solid $basicColorFont;
           padding-left: 48px;
         }
       }
