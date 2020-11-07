@@ -31,7 +31,9 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
 
   const displayMatches = () => {
     handleSearchValueChange(inputRef.current.value);
-    if (searchValue === '') return setMatches([]);
+
+    if (searchValue.length < 3) return;
+
     const arrayOfTags = [];
     data.forEach(tags=> {
       return arrayOfTags.push(...tags.tags)
@@ -69,7 +71,7 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
             ref={inputRef}
             />
           {searchValue ? <i className="fas fa-times" onClick={handleClear}/> : null}
-          {!searchValue ?
+          {searchValue.length < 3 ?
             null
             :
             <ul className='header__form__list'>
