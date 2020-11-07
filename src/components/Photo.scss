@@ -21,7 +21,7 @@
     transition: transform 300ms;
 
     &:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
       cursor: pointer;
     }
   }
@@ -30,10 +30,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 10vh;
-    overflow-x: hidden;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     background-color: rgba(0,0,0,0.7);
     z-index: 1000;
     display: flex;
@@ -42,20 +41,20 @@
 
     .elem__container__box {
       position: relative;
+      background-color: $altColorFont;
+      width: 85vw;
+      border-radius: 4px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: $altColorFont;
-      width: 90vw;
-      border-radius: 4px;
 
       .container__box__header {
+        width: 100%;
+        padding: 2%;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        width: 100%;
-        padding: 2%;
 
         .box__header__user {
           flex-grow: 1;
@@ -92,7 +91,7 @@
 
       .container__box__img {
         display: block;
-        max-width: 90vw;
+        max-width: 80vw;
         max-height: 80vh;
         background-size: cover;
         background-color: $altColorFont;

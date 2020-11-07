@@ -4,42 +4,60 @@ import data from '../db.json';
 
 function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueChange, handleSubmit} ) {
 
+  //ref
   const inputRef = useRef(null);
 
+  //state
   const [matches, setMatches] = useState([]);
 
+  //focusing on input
   useEffect(() => {
     inputRef.current.focus();
   })
 
+  //focus on input when user click on search icon
   const handleFocus = () => {
     inputRef.current.focus();
   }
 
+  //clearing when user click on delete icon
   const handleClear = () => {
-    handleSearchValueChange('');
     inputRef.current.focus();
+    handleSearchValueChange('');
     setMatches([]);
   }
 
+  //filtering through data to find matches
   const findMatches = (wordToMatch, data) => {
     return data.filter(elem => {
       const regex = new RegExp(wordToMatch, 'gi');
-      return elem.title.match(regex);
+      return elem.match(regex);
     })
   }
 
+  //displaying matched topics
   const displayMatches = () => {
+    //updating state
     handleSearchValueChange(inputRef.current.value);
 
+    //if there are less then 3 letters stop
     if (searchValue.length < 3) return;
 
+    //crate array of tags from data
     const arrayOfTags = [];
     data.forEach(tags=> {
-      return arrayOfTags.push(...tags.tags)
+      return arrayOfTags.push(...tags.tags.map(tag=>tag.title))
       })
+
+    //put array of tags through findMtaches function
     const matchArray = findMatches(searchValue, arrayOfTags);
-    const uniqMatchArray = [...new Set(matchArray)];
+
+    //remove duplicates
+    const uniqMatchArray = matchArray.filter((item, index) => {
+      return matchArray.indexOf(item) === index;
+    });
+    
+    //updating state
     setMatches(uniqMatchArray);
   }
 
@@ -79,7 +97,7 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
                 <li className='form__list__elem'>No Match</li>
                 :
                 matches.map((match, idx) => {
-                return <li key={idx} className='form__list__elem' onClick={e => handleSubmit(e, match.title)}>{match.title}</li>
+                return <li key={idx} className='form__list__elem' onClick={e => handleSubmit(e, match)}>{match}</li>
                 })
               }
             </ul>

@@ -3,22 +3,30 @@ import './Photo.scss';
 
 const Photo = ( {id, user, src, srcBigger} ) => {
 
+  //state
   const [isBig, setIsBig] = useState(false);
   const [clientY, setClientY] = useState(0);
   const [photoDetails, setPhotoDetails] = useState('');
+
+  //variables
   const key = "q8pGKlT0Khz6viOf9A5MXa-3XvXETz3f8xNcchKr9MY";
 
+  //making bigger image after user click on it
   const handleMakeBigger = e => {
+    //fetching details of photo
     fetch(`https://api.unsplash.com/photos/${id}/?client_id=${key}`)
     .then(resp => resp.json()
     .then(data => {
+      //set state
       setPhotoDetails(data);
       setIsBig(true);
-      setClientY(e.pageY);
-      window.scrollTo(0, e.pageY + 50);
+      setClientY(e.pageY - e.clientY + 40);
+      //scroll to see image
+      window.scrollTo(0, e.pageY - e.clientY);
     })
   )}
 
+  //exit form big image view
   const handleMakeSmaller = e => {
     setIsBig(false);
   }
@@ -42,7 +50,9 @@ const Photo = ( {id, user, src, srcBigger} ) => {
                   {user.twitter_username && <p>@{user.twitter_username}</p>}
                 </div>
               </div>
-              <div className='box__header__delete' onClick={handleMakeSmaller}><i className="fas fa-times"/></div>
+              <div className='box__header__delete' onClick={handleMakeSmaller}>
+                <i className="fas fa-times"/>
+              </div>
             </div>
             <img 
               className='container__box__img'
