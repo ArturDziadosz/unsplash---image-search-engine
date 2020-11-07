@@ -43,7 +43,7 @@ const PhotoGallery = ( {photos, savedValue, handleClickTag} ) => {
       </div>
       <ul className='row photoGallery__list'>
         {photos.map(photo =>
-            <Photo key={photo.id} src={photo.urls.regular} srcBigger={photo.urls.raw} user={photo.user}/>
+            <Photo key={photo.id} src={photo.urls.small} srcBigger={photo.urls.regular} user={photo.user}/>
         )}
       </ul>
     </section>
