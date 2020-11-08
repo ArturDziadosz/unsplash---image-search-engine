@@ -13,8 +13,9 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
 
   //focusing on input
   useEffect(() => {
+    console.log('poszło');
     inputRef.current.focus();
-  })
+  }, [])
 
   //focus on input when user click on search icon
   const handleFocus = () => {
