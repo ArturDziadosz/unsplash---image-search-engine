@@ -3,7 +3,7 @@
 
 <br/>
 
-### <><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Simple web application for searching images'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Input with typing ahead after more than 2 chars'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<After submiting application will show user similar topics'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<User can type phrase, click on type ahead suggestion or similar topic suggestion'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<User can examine image for more details, e.g user data or location'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Application starts with random background-image and most trending topics'><br/></>
+### <><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Simple web application for searching images'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Input with typing ahead after more than 2 chars'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<After submiting application will show user similar topics'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<User can type phrase, click on type ahead suggestion or similar topic suggestion'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<User can examine image for more details, e.g user data or location'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Application starts with random background-image and most trending topics'><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Used functional components, hooks and fetch'><br/></>
     
 <br/>
 
