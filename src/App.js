@@ -86,7 +86,7 @@ function App() {
 
   const handleMore = () => {
     //added page query
-    fetch(`https://api.unsplash.com/search/photos/?client_id=${key}&query=${searchValue}&per_page=30&page=${page}`)
+    fetch(`https://api.unsplash.com/search/photos/?client_id=${key}&query=${savedValue}&per_page=30&page=${page}`)
     .then(resp => resp.json()
     .then(data => {
       //checking if there is a match
