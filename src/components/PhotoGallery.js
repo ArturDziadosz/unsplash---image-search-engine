@@ -1,11 +1,14 @@
 import './PhotoGallery.scss';
 import Photo from './Photo';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const PhotoGallery = ( {photos, savedValue, handleClickTag} ) => {
+const PhotoGallery = ( {photos, savedValue, handleClickTag, setIsBottom} ) => {
 
   //state
   const [sortedTags, setSortedTags] = useState([]);
+
+  //ref
+  const photoGalleryRef = useRef(null);
 
   //when component mounts prepairing similar topic
   useEffect(() => {
@@ -36,8 +39,21 @@ const PhotoGallery = ( {photos, savedValue, handleClickTag} ) => {
 
   }, [photos])
 
+  //listen on scroll event
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  })
+
+  //checking if user is on the bottom of the page 
+  const handleScroll = () => {
+    let bottom = window.innerHeight - photoGalleryRef.current.getBoundingClientRect().bottom;
+    if (bottom >= 0) {
+      setIsBottom(true);
+    }
+  }
+
   return (
-    <section className='container photoGallery'>
+    <section className='container photoGallery' ref={photoGalleryRef}>
       <div className='row photoGallery__description'>
         <h2 className='photoGallery__description__title'>{savedValue}</h2>
       </div>
