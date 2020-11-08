@@ -58,7 +58,6 @@ function App() {
           setNoMatch(false);
         }
         //changing state
-        setSearchValue(value)
         setSavedValue(value.charAt(0).toUpperCase() + value.slice(1));
         if (data.results) {
           setPhotos(data.results);
@@ -87,7 +86,6 @@ function App() {
 
   const handleMore = () => {
     //added page query
-    console.log('poszło');
     fetch(`https://api.unsplash.com/search/photos/?client_id=${key}&query=${searchValue}&per_page=30&page=${page}`)
     .then(resp => resp.json()
     .then(data => {
