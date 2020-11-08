@@ -9,6 +9,7 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
 
   //state
   const [matches, setMatches] = useState([]);
+  const [showAutocomplete, setShowAutocomplete] = useState(false);
 
   //focusing on input
   useEffect(() => {
@@ -61,9 +62,13 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
     setMatches(uniqMatchArray);
   }
 
+  const handleToggleAutocomplete = () => {
+    setShowAutocomplete(!showAutocomplete);
+  }
+
   return (
     <section className={photos.length === 0 ? 'container fullForm' : 'container smallForm'}>
-      <header className='row header'>
+      <header className='row header' style={showAutocomplete ? {"overflowY": "visible"} : null}>
         {photos.length === 0 &&
           <>
             <h1 className='header__title'>Unsplash</h1>
@@ -88,6 +93,7 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
             onKeyUp={displayMatches}
             ref={inputRef}
             />
+          {photos.length === 0 ? null : <i class={showAutocomplete ? "far fa-caret-square-up" : "far fa-caret-square-down"} onClick={handleToggleAutocomplete}></i>}
           {searchValue ? <i className="fas fa-times" onClick={handleClear}/> : null}
           {searchValue.length < 3 ?
             null
