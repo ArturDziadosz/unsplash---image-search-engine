@@ -15,12 +15,16 @@
     }
 
     .photoGallery__description__tag {
+      max-width: 300px;
+      overflow: hidden;
       margin: 5px 5px 30px 5px;
       padding: 5px 30px;
       border: 1px solid $altMainColor;
       color: $mainColor;
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       flex: 1 0 auto;
       cursor: pointer;
       border-radius: 4px;
