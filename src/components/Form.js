@@ -93,7 +93,7 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
             onKeyUp={displayMatches}
             ref={inputRef}
             />
-          {photos.length === 0 || searchValue.length < 3 ? null : <i class={showAutocomplete ? "far fa-caret-square-up" : "far fa-caret-square-down"} onClick={handleToggleAutocomplete}></i>}
+          {photos.length === 0 || searchValue.length < 3 ? null : <i className={showAutocomplete ? "far fa-caret-square-up" : "far fa-caret-square-down"} onClick={handleToggleAutocomplete}></i>}
           {searchValue ? <i className="fas fa-times" onClick={handleClear}/> : null}
           {searchValue.length < 3 ?
             null
