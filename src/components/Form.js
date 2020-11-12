@@ -13,7 +13,6 @@ function Form( {noMatch, photos, searchValue, trendingTopics, handleSearchValueC
 
   //focusing on input
   useEffect(() => {
-    console.log('poszło');
     inputRef.current.focus();
   }, [])
 
